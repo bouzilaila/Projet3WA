@@ -1,0 +1,252 @@
+/********************************
+CSS commun
+********************************/
+*{
+    box-sizing:border-box;
+    font-family: arial, sans-serif;
+}
+
+main{
+    margin:0 auto;
+    background-color:#E8E8E8;
+   
+}
+
+/********************************
+CSS header
+********************************/
+header{
+    background-color:#E8E8E8;
+}
+
+.logo img{
+    width: 30%;
+    border:1px solid black;
+    border-radius: 50%;
+    margin-top:10px;
+}
+
+.logo a{
+    text-decoration:none; 
+    font-family: 'Galada', cursive;
+    font-weight: bold;
+    color:black;
+    padding-top: 20px;
+    font-size: 1.5rem;
+}
+
+.logo{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom: 20px;
+}
+
+.menu li a{
+    text-decoration:none;
+    background-color: red;
+    color:white;
+    padding:8px;
+    border-radius:20px;
+    font-size: 0.7rem;
+     
+}
+
+.menu li{
+    list-style-type: none;
+    padding:15px;
+}
+
+ul{
+    display:flex;
+    justify-content: center;
+    padding-left: 0px;
+}
+
+/********************************
+CSS admin
+********************************/
+
+.admin a, .product a{
+    text-decoration:none;
+    color:black;
+}
+
+.product a, i{
+    color:blue;
+}
+
+.fa-plus-circle{
+    margin:8px;
+}
+
+.product h1{
+    font-size:1.2rem;
+    padding-top:15px;
+}
+
+/********************************
+CSS la Carte
+********************************/
+
+.lacarteimg img{
+    width: 100%;
+}
+
+figure img{
+    width:35%;
+}
+
+.flex figcaption{
+    display:inline-block;
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-align:top;
+    margin-inline-start: 10px;
+}
+
+.flex p{
+    color:red;
+    font-size:1.3rem;
+    display:inline-block;
+    margin-left:8px;
+}
+
+.lacarte img{
+    border-radius: 20%;
+}
+
+h1{
+    font-size: 2rem;
+   
+}
+
+h1, h2{
+    text-align:center;
+}
+
+.lacarte h2{
+    color:red;
+}
+
+
+.flex{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+.section3{
+    margin-left:20px;
+    margin-right: 20px;
+}
+
+.setion3 h3{
+    font-size:1rem;
+    color:red;
+}
+
+
+.section3 iframe{
+    width: 100%;
+    margin-bottom:15px;
+}
+
+/********************************
+CSS reservation
+********************************/
+.reservation h1{
+    font-size:1rem;
+}
+
+.reservation fieldset{
+    background-color: red;
+}
+
+.reservation label,select,input{
+    font-size:0.9rem;
+}
+
+.reservation input,select{
+    margin-top:10px;
+}
+
+
+
+/********************************
+CSS inscription user et connexion admin
+********************************/
+.inscription div a,i{
+    color:black;
+    font-size:20px;
+    margin-left:15px;
+}
+
+.inscription h1, .admin h1, h2, .interfaceAdmin h1, .connexionUser h1{
+    color:#00ccff;
+    font-size:1.5rem;
+    padding-bottom:15px;
+}
+
+.inscription label, .admin label, .connexionUser label{
+    font-size:0.5rem;
+}
+
+.inscription input, .admin input, .connexionUser input{
+    font-size:10px;
+}
+
+.inscription .btnvalider, .admin .btnvalider, .connexionUser .btnvalider{
+    padding:4px 15px;
+    font-size:0.6rem;
+    background-color:#00ccff;
+    display: block;
+    margin:auto;
+    border-radius:10%;
+}
+
+.inscription, .connexionUser{
+    margin-top:15px;
+    margin-bottom:50px;
+}
+
+.admin div a, .connexionUser div a{
+    font-size:0.6rem;
+}
+
+.admin div{
+    margin-top:35px;
+}
+
+.erreur{
+    color: red;
+    font-size:0.7rem;
+    display:block;
+    text-align:center;
+}
+
+/********************************
+CSS Interface admin
+********************************/
+
+.interfaceAdmin a{
+    display:flex;
+    flex-direction: column;
+    padding:10px;
+}
+
+/********************************
+CSS footer
+********************************/
+footer{
+    background-color:#000000; 
+    padding:20px;
+    color:white;
+}
+
+.footer a{
+    text-decoration:none;
+    color:white; 
+}

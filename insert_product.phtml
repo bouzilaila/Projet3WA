@@ -1,0 +1,26 @@
+
+
+    <h1>Ajouter un produit</h1>
+            
+        <form class="insertform" methode="post" action="insert_product.php" enctype= "multipart/form-data">
+
+            <?php foreach($insertProduct as $product):?>
+
+                <label for='image'>Télècharger votre image :</label>
+                <input type='file' id='image' name='image' value="<?= htmlspecialchars($product['image'])?>"/>
+                <span><?= $error ?></span>
+                
+                <label for="name">Nom :</label>
+                <input type="text" id="nom" name="nom" value="<?= htmlspecialchars($product['nom'])?>"/>
+                <span><?= $error ?></span>
+                
+                <label for="price">Prix :</label>
+                <input type="number" step="0.01" id="prix" name="prix" value="<?= htmlspecialchars($product['prix'])?>"/>
+                <span><?= $error ?></span>
+
+            <?php endforeach; ?>
+                
+                <button type='submit'>Ajouter</button>
+                <a href='product.phtml'>Annuler</a>
+                
+        </form>

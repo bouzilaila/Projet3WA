@@ -1,0 +1,18 @@
+
+<main class="product">
+    <h1>Liste des produits :</h1>
+    <a href="../controllers/insert_product.php"><i class="fas fa-plus-circle"></i>Ajouter un produit</a>
+    <table>
+        <?php foreach($products as $product):?>
+            <tr>
+                <td><img src="images/product/<?= $product['image']?>" alt="<? htmlspecialchars($product['nom'])?>"></td>
+                <td><?= htmlspecialchars($product['nom'])?></td>
+                <td><?=number_format($product['prix'],2,'.','')?></td>    
+                <td><a href="update.php?id=<?= $product['id']?>"><i class="fas fa-pencil-alt"></i></a>
+                <a href="delete.php?id=<?= $product['id']?>"><i class="fas fa-times"></i></a></td>        
+            </tr>                                   
+        <?php endforeach; ?>
+    </table>        
+</main>
+            
+        
