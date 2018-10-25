@@ -5,7 +5,7 @@
    //Fichier qui contient la connexion à la BD
     require '../configuration/database.php';
     include '../header_admin.phtml';
-    include '../product.phtml';
+    
     
                     
     //Récupération des produits
@@ -21,28 +21,7 @@
     $product->execute();
 
     $products = $product->fetchAll();
-
-    /*$query =
-    '
-    SELECT * FROM `product` ORDER BY `Id` DESC 
     
-    ';
+    include '../product.phtml';
 
-    $product = $connexion->prepare($query);
-    $product->execute();
-    $products = $product->fetchAll();
-              
-        /*$product = $connexion->query(
-
-        '
-        SELECT * FROM `product` ORDER BY `Id` DESC               
-        '  
-        );
-        
-        $products = $product->fetchAll();*/
-
-
-        include '../footer.phtml';
-        
-        
-                    
+    include '../footer.phtml';

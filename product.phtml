@@ -5,11 +5,11 @@
     <table>
         <?php foreach($products as $product):?>
             <tr>
-                <td><img src="images/product/<?= $product['image']?>" alt="<? htmlspecialchars($product['nom'])?>"></td>
-                <td><?= htmlspecialchars($product['nom'])?></td>
-                <td><?=number_format($product['prix'],2,'.','')?></td>    
-                <td><a href="update.php?id=<?= $product['id']?>"><i class="fas fa-pencil-alt"></i></a>
-                <a href="delete.php?id=<?= $product['id']?>"><i class="fas fa-times"></i></a></td>        
+                <td><?= $product['Id']?><img src="../Images/<?= $product['Image']?>"alt="<?=htmlspecialchars($product['Nom'])?>"></td>
+                <td><?= htmlspecialchars($product['Nom'])?></td>
+                <td><?=number_format($product['Prix'], 2)?></td>    
+                <td><a href="update.php?id=<?= $product['Id']?>"><i class="fas fa-pencil-alt"></i></a>
+                <a href="delete.php?id=<?= $product['Id']?>"><i class="fas fa-times"></i></a></td>        
             </tr>                                   
         <?php endforeach; ?>
     </table>        
