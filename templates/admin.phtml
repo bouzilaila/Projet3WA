@@ -1,0 +1,24 @@
+
+<!-- Formulaire de connexion administrateur -->
+<section id='formulaire'>
+        <div class='retour'>
+                <a href="../index.php">Retour</a> 
+        </div>
+        
+        <div class="container">
+                <h1>Administrateur</h1>
+                <form method="POST" action='admin.php' class='form' enctype="multipart/form-data">
+                        <div class="form-group">
+                                <label for="name">Pseudo:</label>
+                                <input type="text" name="username" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                                <label for="prix">Mot de passe:</label>
+                                <input type="password" class="form-control" name="password"/> 
+                        </div>
+                                
+                        <input type="submit" name="submit" value='valider' class='btnvalider'/>
+                </form>
+        </div>
+</section>
+

@@ -1,0 +1,22 @@
+<div class='retour'>
+        <a href="../index.php">Retour</a> 
+</div>
+<!-- Formulaire de connexion utilisateur -->
+<section id='formulaire'>
+        <div class="container">
+                <h1>Connexion</h1>
+                <form method="POST" action='connexion_user.php' class='form' enctype="multipart/form-data">
+                        <div class="form-group">
+                                <label for="name">Email:</label>
+                                <input type="email" class="form-control" name="mail" value="<?php if(isset($mail)) { echo $mail; } ?>"/>
+                        </div>
+                        <div class="form-group">
+                                <label for="prix">Mot de passe:</label>
+                                <input type="password" class="form-control" name="password"/> 
+                        </div>
+                                
+                        <input type="submit" name="connexion" value='valider' class='btnvalider'/>
+                </form>
+        </div>
+</section>
+

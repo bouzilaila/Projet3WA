@@ -1,10 +1,11 @@
 <?php
 
-//User Inscription
+//Inscription utilisateur
 
 require '../configuration/database.php';
-include '../header.phtml';
-include '../inscription_user.phtml';
+include '../templates/header.phtml';
+include '../templates/inscription_user.phtml';
+
 
     if(isset($_POST['inscription']))
     {
@@ -35,7 +36,7 @@ include '../inscription_user.phtml';
 
                         if($password == $password2)
                         {
-                            $userinscription= $connexion->prepare(
+                            $userinscription = $pdo->prepare(
                                 '
                                 INSERT INTO user (nom, mail, date, password) 
                                 VALUES (:nom, :mail, NOW(), :password);
@@ -45,7 +46,8 @@ include '../inscription_user.phtml';
                             $userinscription->execute([':nom' => $nom, ':mail' =>  $mail, ':password' => $password]);
 
                             $error = "Votre compte a bien été cree !";
-                            header("Location:connexion_user.php");
+
+                            header ('Location:connexion_user.php');
                         }
                         else
                         {
@@ -74,5 +76,7 @@ include '../inscription_user.phtml';
         }
     }
 
-    include '../footer.phtml';
+    
+
+    include '../templates/footer.phtml';
     

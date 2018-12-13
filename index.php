@@ -2,9 +2,12 @@
 
 // Accueil
 
-include 'header.phtml';
-include 'home.phtml';
-include 'footer.phtml';
+$home = 'home';
+
+include 'templates/header.phtml';
+include 'templates/home.phtml';
+include 'templates/footer.phtml';
+
 
 
 

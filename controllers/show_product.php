@@ -1,27 +1,41 @@
 <?php
+session_start();
 
-// Product
+// Liste des produits administrateur
 
-   //Fichier qui contient la connexion à la BD
     require '../configuration/database.php';
-    include '../header_admin.phtml';
     
+
+    if(array_key_exists('admin',$_SESSION)){ 
+        include '../templates/header_admin.phtml';
+
+        //Récupération des produits
+        $product = $pdo->prepare(
+            '
+                SELECT *
+                FROM `product`
+                ORDER BY `id` DESC
+            '
+            );
     
+        $product->execute();
+    
+        $products = $product->fetchAll();
+        
+        include '../templates/product.phtml';
+
+        include '../templates/footer.phtml';
+
+    }
+    else{
+        header('Location: logout_admin.php'); 
+    }
                     
-    //Récupération des produits
-
-    $product = $pdo->prepare(
-    '
-    SELECT *
-    FROM `product`
-    ORDER BY `id` DESC
-    '
-    );
-
-    $product->execute();
-
-    $products = $product->fetchAll();
     
-    include '../product.phtml';
+    
 
-    include '../footer.phtml';
+
+    
+        
+        
+                    

@@ -1,0 +1,24 @@
+    <div class='container_carte'>
+        <div class='retour'>
+            <a href='../controllers/interface_admin.php'>Retour</a>
+        </div>
+
+        <!-- La carte administrateur  -->
+        <h1 class='h1_product'>Liste des produits</h1>
+        <a href="../controllers/insert_product.php"><i class="fas fa-plus-circle"></i>Ajouter un produit</a>
+    </div>
+    <section id='carte'>
+        <table>
+            <?php foreach($products as $product):?>
+                <tr>
+                    <td><a href="delete_product.php?id=<?= $product['id']?>"><i class="fas fa-times"></i></a></td> 
+                    <td><img src="../Images/<?= $product['image']?>"alt="<?=htmlspecialchars($product['nom'])?>"></td>
+                    <td class='nom'><?= htmlspecialchars($product['nom'])?></td>
+                    <td class='prix'><?=number_format($product['prix'], 2)?>€</td>    
+                </tr>                                   
+            <?php endforeach; ?>
+        </table>
+    </section>        
+
+            
+        

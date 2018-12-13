@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Document Titre</title>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Ici la description de mon site"/>
+
+        <!-- googlefont -->
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Shrikhand" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        
+        <!--   CSS   -->
+        <?php if(isset($home) && $home === "home"): ?>            
+            <link rel="stylesheet" href="css/normalize.css" /> 
+            <link rel="stylesheet" href="css/style.css"/>
+        <?php else: ?>
+            <link rel="stylesheet" href="../css/normalize.css" />
+            <link rel="stylesheet" href="../css/style.css"/>
+        <?php endif; ?>
+
+        <!-- bootstrap formulaire et table de reservation-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+    </head>
+<body>
+    <header id="header_admin">
+        <div class='logo'>
+            <h1>Pizza house</h1>
+            <img src="../Images/logo/logo.jpg" alt='logo'id="logo_admin">
+        </div>
+    </header>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

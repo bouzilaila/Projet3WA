@@ -1,0 +1,37 @@
+<!-- La liste des reservations  -->
+<section id="list_reservation">
+
+    <div class='retour'>
+        <a href='../controllers/interface_admin.php'>Retour</a>
+    </div>
+
+    <h1>Liste des reservation</h1> 
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Personnes</th>
+                        <th>Telephone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php foreach($reservations as $reservation):?>
+                    <tr>
+                        <td><?= htmlspecialchars($reservation['nom'])?></td>
+                        <td><?= htmlspecialchars($reservation['date'])?></td>
+                        <td><?= htmlspecialchars($reservation['heure'])?>h</td>
+                        <td><?= htmlspecialchars($reservation['nombre_personne'])?></td>
+                        <td><?= htmlspecialchars($reservation['telephone'])?></td> 
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,28 @@
+
+<!--   La carte    -->
+    <div class='retour'>
+        <a href="../index.php">Retour</a> 
+    </div>    
+
+    <div>
+        <h1 class="ml14 text-center">
+        <span class="text-wrapper">
+            <span class="letters">La carte du chef</span>
+            <span class="line"></span>
+        </span>
+        </h1>   
+        <section id='carte'>         
+            <table>
+                <?php foreach($products as $product):?>
+                    <tr>
+                        <td><img src="../Images/<?= $product['image']?>"alt="<?=htmlspecialchars($product['nom'])?>"></td>
+                        <td class='nom'><?= htmlspecialchars($product['nom'])?></td>
+                        <td class='prix'><?=number_format($product['prix'], 2)?> €</td>       
+                    </tr>                                   
+                <?php endforeach; ?>
+            </table>
+        </section> 
+    </div>      
+        
+
+

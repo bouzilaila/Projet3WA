@@ -1,65 +1,77 @@
 <?php
 session_start();
 
+// Connexion utilisateur
+
 require '../configuration/database.php';
-include '../header.phtml';
-//var_dump($_SESSION['id']);
-include '../connexion_user.phtml';
+include '../templates/header.phtml';
 
 
     if(isset($_POST['connexion']))
     {
-        $mail = htmlspecialchars($_POST['mail']);
-        $password = sha1($_POST['password']);
 
-        if(!empty($mail) && !empty($password))
-        {
-            if(filter_var($mail, FILTER_VALIDATE_EMAIL))
+        if(array_key_exists('mail',$_POST) && array_key_exists('password',$_POST)){
+
+            $mail = htmlspecialchars($_POST['mail']);
+            $password = sha1($_POST['password']);
+
+
+            if(!empty($mail) && !empty($password))
             {
-                $requser = $pdo->prepare(
-                    '
-                    SELECT `id`,`mail`,`password`
-                    FROM `user` 
-                    WHERE mail = :mail AND password = :password
-                    '
-                );
-
-                $requser->execute(array(':mail' => $mail, ':password' => $password));
-                $connectuser = $requser->fetch();
-
-                if($connectuser)
+                if(filter_var($mail, FILTER_VALIDATE_EMAIL))
                 {
-                    $_SESSION['id'] = $connectuser['id'];
-                    $_SESSION['mail'] = $connectuser['mail'];
-                    $_SESSION['password'] = $connectuser['password'];
+                    $requser = $pdo->prepare(
+                        '
+                        SELECT `id`,`mail`,`password`
+                        FROM `user` 
+                        WHERE mail = :mail AND password = :password
+                        '
+                    );
 
-                    header('Location:connexion_user.php');
+                    $requser->execute(array(':mail' => $mail, ':password' => $password));
+                    $connectuser = $requser->fetch();
+
+                    
+
+                    if($connectuser)
+                    {
+                        $_SESSION['user'] = $mail;
+                        $_SESSION['id'] = $connectuser['id'];
+                        $_SESSION['mail'] = $connectuser['mail'];
+                        $_SESSION['password'] = $connectuser['password'];
+
+                        // Redirection vers l'interface d'utilisateur
+                        header('Location:interface_user.php');
+                    }
+                    else
+                    {
+                        $error = 'Vos identifiants sont incorrectes !';
+                    }
+
+                    if($password != ['password'])
+                    {
+                        $error = 'Vos identifiants sont incorrectes !';
+                    }
+                    
                 }
                 else
                 {
-                    $error = 'Vos identifiants sont incorrectes !';
+                    $error = "Votre adresse mail n'est pas valide !";
                 }
-
-                if($password != $_SESSION['password'])
-                {
-                    $error = 'Mot de passe incorrecte !';
-                }
-                
             }
             else
             {
-                $error = "Votre adresse mail n'est pas valide !";
+                $error = "Tous les champs doivent être complétés !";
             }
-        }
-        else
-        {
-            $error = "Tous les champs doivent être complétés !";
-        }
 
-        if(isset($error))
-        {
-            echo "<span class='erreur'>".$error."</span>";
+            if(isset($error))
+            {
+                echo "<span class='erreur'>".$error."</span>";
+            }
         }
     }
 
-    include '../footer.phtml';
+    include '../templates/connexion_user.phtml';
+    include '../templates/footer.phtml';
+    
+   
